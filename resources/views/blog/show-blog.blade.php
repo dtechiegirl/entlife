@@ -210,41 +210,7 @@
                         </div> --}}
                         
                         <!-- Comment Form -->
-                        <div class="comment-form">
-									
-                            <div class="group-title"><h4>Leave A Comment</h4></div>
-                            
-                            <!--Comment Form-->
-                            <form method="post" action="blog.html">
-                                <div class="row clearfix">
-                                
-                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="text" name="username" placeholder="Your Name" required="">
-                                    </div>
-                                    
-                                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="email" name="email" placeholder="Email" required="">
-                                    </div>
-                                    
-                                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <input type="text" name="topic" placeholder="Topic" required="">
-                                    </div>
-                                    
-                                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <textarea class="" name="message" placeholder="Type your comment"></textarea>
-                                    </div>
-                                    
-                                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <div class="check-box"><input type="checkbox" name="shipping-option" id="account-option"> &ensp; <label for="account-option">Save my name, email, and website in this browser for the next time I comment.</label></div>
-                                    </div>
-                                    
-                                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">Post comment</span></button>
-                                    </div>
-                                </div>
-                            </form>
-                                
-                        </div>
+                       @livewire('blog.show')
                         
                         
                     </div>

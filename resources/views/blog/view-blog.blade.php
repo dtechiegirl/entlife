@@ -68,7 +68,7 @@
                         {{-- <div class="category">Business</div> --}}
                         <h5>{{$post->title}}</h5>
                         <h5>{{$post->description}}</h5>
-                          <p><a href="/blog/{{$post->id}}">Read More...</p>
+                          <p><a href="/blog/{{$post->slug}}">Read More...</p>
                             {{-- @if(auth()->user()->is_admin == 1) --}}
                             @auth
                             {{-- <li>Hello, {{auth()->user()->full_name}}</li> --}}

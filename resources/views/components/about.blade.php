@@ -264,7 +264,7 @@
                             </div>
                             
                             <!-- Team Block -->
-                            <div class="team-block col-lg-6 col-md-6 col-sm-12">
+                            {{-- <div class="team-block col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image">
                                         <a href="course-detail.html"><img src="{{asset('assets/images/resource/Balami.jpg')}}" alt="" /></a>
@@ -274,7 +274,7 @@
                                         <div class="designation">- Psychologist</div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             
                         </div>
                     </div>

@@ -11,12 +11,20 @@ class Blog extends Model
 {
     use HasFactory;
     use Sluggable;
-    protected $fillable = ['title', 'slug', 'description', 'picture', 'content'];
+    protected $guarded = [
+        'id',
+    ];
+    // protected $fillable = ['title', 'slug', 'description', 'picture', 'content'];
     public function sluggable(): array{
         return [
             'slug' => [
                 'source'=> 'title'
             ]
             ];
+    }
+
+    public function createcomment(){
+        return $this->hasMany(Comment::class, 'blog_id');
+   
     }
 }

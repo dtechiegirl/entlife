@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\Blog\Show as BlogShow;
+// use App\Http\Livewire\Blog\Show as BlogShow;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\entController;
 use App\Http\Controllers\BlogController;
@@ -43,4 +43,4 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/messages', [ContactController::class, 'messages'])->name('messages');
 Route::get('/courses', [entController::class, 'courses'])->name('courses');
 
-Route::get('/blog/{slug}', BlogShow::class, 'show')->name('show-blog');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('show-blog');

@@ -39,7 +39,7 @@
 								<a class="theme-btn btn-style-six" href="courses-single.html"><span class="txt"><i class="icon fa fa-file-text-o"></i>Take Our Courses</span></a>
 							</div>
 							<div class="pull-left">
-								<a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image video-box"><span class="flaticon-play-arrow"><i class="ripple"></i></span></a>
+								<a href="https://youtu.be/N5YBIXIDmUA" class="lightbox-image video-box"><span class="flaticon-play-arrow"><i class="ripple"></i></span></a>
 							</div>
 						</div>
 					</div>
@@ -237,11 +237,12 @@
 				<div class="content-column col-lg-5 col-md-12 col-sm-12">
 					<div class="inner-column">
 						<div class="sec-title">
-							<h2>Hi, <br> I’m Flourish Adedamola Balami!</h2>
+							<h2>Hi, <br> I’m Adedamola Flourish Balami!</h2>
 						</div>
 						<div class="bold-text">
-							<p>I’m a best-selling author, keynote speaker, master coach, and podcast/TV host who is committed to guiding people and organizations into their highest potential.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia.</p>
+							<p>Lead Facilitator Successful Business Startups.</p>
+							{{-- <p>I’m a best-selling author, keynote speaker, master coach, and podcast/TV host who is committed to guiding people and organizations into their highest potential.</p> --}}
+							{{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia.</p> --}}
 						</div>
 						
 						<!-- Coach Block -->

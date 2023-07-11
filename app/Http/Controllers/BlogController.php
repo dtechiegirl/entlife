@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class BlogController extends Controller
@@ -41,8 +42,14 @@ class BlogController extends Controller
             'content' => 'required',
         ]);
 
+         if ($request->hasFile('image')) {
+            $file = $request->file('picture');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('/images' . $filename);
+            // $post->picture = $file;
+        }
         $newImageName = uniqid() . '-' . $request->title . '.'  . $request->picture->extension();
-        //    dd($newImageName);
         $request->picture->move(public_path('images'), $newImageName);
 
         // dd($slug);
@@ -80,6 +87,42 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    // public function update(Request $request, $id)
+    // {
+
+    //     $post =  Blog::find($id);
+    //     // $post->title = $request->input('title');
+    //     // $post->description = $request->input('description');
+    //     // $post->slug = $request->input('slug');
+    //     // $post->content = $request->input('content');
+    //     $request->validate([
+    //         'title' => 'nullable',
+    //         'description' => 'nullable|max:500',
+    //         'picture' => 'nullable|mimes:jpg,png,jpeg|max:5048',
+    //         'content' => 'nullable',
+    //     ]);
+    //     dd($request);
+    //     if($request->hasFile('picture')){
+    //         $destination = 'images'.$post->picture;
+    //         if(File::exists($destination)){
+    //             File::delete($destination);
+    //         }
+    //         $newImageName = uniqid() . '-' . $request->title . '.'  . $request->picture->extension();
+    //         $request->picture->move(public_path('images'), $newImageName);
+    //     }
+    //     $post->update([
+    //         'title' => $request->input('title'),
+    //         'description' => $request->input('description'),
+    //         'slug' => SlugService::createslug(Blog::class,  'slug', $request->title),
+    //         'picture' =>  $newImageName,
+    //         'content' => $request->input('content'),
+    //         // 'user_id' => auth()->user()->id
+    //     ]);
+
+    // //  $post->update();
+    //     return redirect('/blog')->with('message', 'Post Updated Successfully');
+    // }
+
     public function update(Request $request, $id)
     {
 
@@ -89,16 +132,7 @@ class BlogController extends Controller
             'picture' => 'nullable|mimes:jpg,png,jpeg|max:5048',
             'content' => 'nullable',
         ]);
-     
- 
-
-        //    $newImageName = uniqid() . '-' . $request->title . '.'  . $request->picture->extension();    
-        //    dd($newImageName);
-        //       $request->picture->move(public_path('images'), $newImageName);
         $post = Blog::find($id);
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-          $post->content = $request->input('content');
         if ($request->hasFile('image')) {
             $file = $request->file('picture');
             $extension = $file->getClientOriginalExtension();
@@ -106,11 +140,18 @@ class BlogController extends Controller
             $file->move('/images' . $filename);
             $post->picture = $file;
         }
+        $post->update([
+            'title'=> $request->title,
+            'content'=> $request->content,
+            'description'=> $request->description,
+
+        ]);
+      
         
         // $post->create(
           
         // ); 
-        $post->save();
+        // $post->save();
         return redirect('/blog')->with('message', 'Post Updated Successfully');
     }
 

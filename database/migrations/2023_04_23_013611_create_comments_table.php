@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('title');
             $table->string('message');
+            $table->foreignId('blog_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

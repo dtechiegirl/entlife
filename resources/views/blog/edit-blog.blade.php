@@ -76,7 +76,7 @@
 									@csrf
                                     @method('PUT')
 									<div class="form-group">
-										<input type="text" value="{{$post->title}}">
+										<input type="text" name="title" value="{{$post->title}}">
 									</div>
 									
 									<div class="form-group">
